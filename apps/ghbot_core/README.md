@@ -1,0 +1,3 @@
+# GhbotCore
+
+**TODO: Add description**
