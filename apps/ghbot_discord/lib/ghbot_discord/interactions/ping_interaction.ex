@@ -1,4 +1,4 @@
-defmodule GhbotDiscord.Commands.PingCommand do
+defmodule GhbotDiscord.Interactions.PingInteraction do
   @moduledoc """
   Registers a slash command for a ping/pong liveliness check.
   """
@@ -6,15 +6,16 @@ defmodule GhbotDiscord.Commands.PingCommand do
   alias Nostrum.Api
   alias Nostrum.Struct.Interaction
 
-  @name "gh_ping"
+  def command_name, do: "gh_ping"
 
-  @command %{
-    name: @name,
-    description: "Ping/Pong liveliness check for GhBot.",
-    options: []
-  }
+  def command_definition,
+    do: %{
+      name: command_name(),
+      description: "Ping/Pong liveliness check for GhBot.",
+      options: []
+    }
 
-  def command_definition, do: @command
+  def command_version, do: 1
 
   def handle(%Interaction{} = interaction) do
     response = %{

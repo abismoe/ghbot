@@ -26,7 +26,7 @@ config :ghbot_core, GhbotCore.Mailer, adapter: Swoosh.Adapters.Local
 config :swoosh, :api_client, false
 
 config :ghbot_web,
-  generators: [context_app: false]
+  generators: [context_app: :ghbot_core]
 
 # Configures the endpoint
 config :ghbot_web, GhbotWeb.Endpoint,

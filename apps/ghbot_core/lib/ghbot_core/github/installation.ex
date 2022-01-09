@@ -18,4 +18,12 @@ defmodule GhbotCore.Github.Installation do
        end)}
     end
   end
+
+  def fetch_all! do
+    with {:ok, installations} <- fetch_all() do
+      installations
+    else
+      {:error, error} -> throw(error)
+    end
+  end
 end
